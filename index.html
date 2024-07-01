@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link href="https://fonts.cdnfonts.com/css/horizon" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variaveis.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsivo.css">
+    <link rel="shortcut icon" href="assets/midia/favicon-32x32.png" type="image/x-icon">
+    <title>Lista de espera - Mentoria</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1470075967237792');
+        fbq('track', 'PageView');
+    </script>
+
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1470075967237792&ev=PageView&noscript=1" /></noscript>
+
+    <!-- End Meta Pixel Code -->
+</head>
+
+<style>
+   .proximas-turmas-desktop .proximas-turmas {
+    width: 350px;
+    animation: grow-shrink 2s infinite;
+}
+
+@keyframes grow-shrink {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.proximas-turmas-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    .proximas-turmas-desktop .proximas-turmas {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .proximas-turmas-desktop .proximas-turmas {
+        display: none;
+    }
+    .proximas-turmas-mobile {
+        display: block;
+        margin: 0 auto;
+        animation: grow-shrink 2s infinite;
+    }
+    .proximas-turmas-mobile .proximas-turmas {
+        width: 300px;
+    }
+}
+
+</style>
+
+<body>
+    <main class="main">
+
+        <div id="modal-lista-de-espera" class="modal">
+            <div class="modal-conteudo">
+                <span class="btn-fechar">&times;</span>
+                <h2>Lista de espera</h2>
+                <form class="formulario-modal">
+                    <div class="grupo-formulario">
+                        <input type="text" id="name" name="name" placeholder="Insira seu nome completo"
+                            class="input-form">
+                    </div>
+                    <div class="grupo-formulario">
+                        <input type="email" id="email" name="email" placeholder="Insira seu melhor e-mail"
+                            class="input-form">
+                    </div>
+                    <div class="grupo-formulario">
+                        <input type="tel" id="phone" name="phone" placeholder="Insira seu telefone com DDD"
+                            class="input-form">
+                    </div>
+                    <div class="grupo-formulario">
+                        <input type="text" id="instagram" name="instagram" placeholder="@ do Instagram"
+                            class="input-form">
+                    </div>
+                    <div class="grupo-formulario">
+                        <label class="label-form">Qual seu nível de conhecimento na tatuagem?</label>
+                        <div class="checkbox-group">
+                            <input type="radio" id="nivel1" name="nivel" value="nunca-tatou" class="input-radio">
+                            <label for="nivel1" class="label-form">Nunca tatuou</label><br>
+
+                            <input type="radio" id="nivel2" name="nivel" value="iniciante" class="input-radio">
+                            <label for="nivel2" class="label-form">Iniciante</label><br>
+
+                            <input type="radio" id="nivel3" name="nivel" value="intermediario" class="input-radio">
+                            <label for="nivel3" class="label-form">Intermediário</label><br>
+
+                            <input type="radio" id="nivel4" name="nivel" value="avancado" class="input-radio">
+                            <label for="nivel4" class="label-form">Avançado</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-form">Entrar na lista de espera</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="mentoria">
+            <div class="conteudo">
+                <div class="informacoes header-animation">
+                    <h2 class="sub-informacoes">Junte-se à Lista de Espera para a Melhor Mentoria de Tatuagem</h2>
+                    <p class="paragrafo-informacoes">
+                        Inscreva-se agora e receba um e-book gratuito com dicas exclusivas
+                    </p>
+                    <button type="button" class="abrir-modal btn-desk btn-informacoes button">
+                        <span class="text">Entrar na fila de espera</span>
+                        <span class="shimmer"></span>
+                    </button>
+
+                    <button type="button" class="abrir-modal-mob btn-mobile btn-animation">Entrar na fila de
+                        espera</button>
+
+                    <div class="proximas-turmas-desktop">
+                        <img src="assets/midia/proximas-turmas.webp" class="proximas-turmas"
+                            alt="Proximas turmas da mentoria">
+                    </div>
+                </div>
+
+                <div class="proximas-turmas-mobile">
+                    <img src="assets/midia/proximas-turmas.webp" class="proximas-turmas"
+                        alt="Proximas turmas da mentoria">
+                </div>
+
+                <div class="img-informacoes">
+                    <img src="assets/midia/imagem-tuzinho.webp"
+                        alt="Imagem que ilustra o tatuador e mentor Tuzinho segurando seus prêmios " />
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="modulos modulos-animation">
+            <h3 class="titulo-main">Por que entrar na nossa mentoria?</h3>
+
+            <div class="cards-modulos">
+                <div class="informacao-modulo-topicos">
+                    <img src="assets/midia/icones/marcador.png" alt="Icone do card de Fine Line"
+                        class="img-card-modulo" />
+                    <span class="modulo-card">Técnicas exclusivas</span>
+                    <ul class="lista-card">
+                        <li class="item-cards-modulos">◦ 3Fs sem falha, fuga e ferimentos</li>
+                        <li class="item-cards-modulos">◦ PVM para pigmentação</li>
+                        <li class="item-cards-modulos">◦ Meio copo/ Copo cheio</li>
+                        <li class="item-cards-modulos">◦ Movimentos de agulha</li>
+                        <li class="item-cards-modulos">◦ Foco e desfoco</li>
+                        <li class="item-cards-modulos">◦ E muitas outras</li>
+                    </ul>
+                </div>
+
+                <div class="informacao-modulo">
+                    <img src="assets/midia/icones/avaliacao.png" alt="Icone do card de Sculpt Line"
+                        class="img-card-modulo" />
+                    <span class="modulo-card">Avaliação de nível</span>
+                    <p class="txt-card">
+                        Avaliação inicial para identificar o nível técnico do aluno e posicioná-lo na etapa adequada da
+                        mentoria para otimizar seu aprendizado.
+                    </p>
+                </div>
+
+                <div class="informacao-modulo">
+                    <img src="assets/midia/icones/exercicio.png" alt="Icone do card de Biossegurança"
+                        class="img-card-modulo" />
+                    <span class="modulo-card">Exercícios passo a passo</span>
+                    <p class="txt-card">
+                        Realize exercícios guiados e detalhados para dominar cada técnica de tatuagem, avançando de
+                        forma segura e eficaz na mentoria
+                    </p>
+                </div>
+            </div>
+
+            <div class="cards-modulos">
+                <div class="informacao-modulo">
+                    <img src="assets/midia/icones/aula-aluno.png" alt="Icone do card de transição"
+                        class="img-card-modulo" />
+                    <span class="modulo-card">Live com Aluno na sexta</span>
+                    <p class="txt-card">
+                        Participação ao vivo de um aluno tatuando com Tuzinho, tirando dúvidas em tempo real e
+                        aprimorando habilidades práticas
+                    </p>
+                </div>
+
+                <div class="informacao-modulo">
+                    <img src="assets/midia/icones/perguntas-e-respostas.png" alt="Icone do card de Pigmentação"
+                        class="img-card-modulo" />
+                    <span class="modulo-card">Sessão ao vivo de perguntas e respostas</span>
+                    <p class="txt-card">
+                        Aula interativa para esclarecer dúvidas sobre exercícios e conteúdos, proporcionando
+                        entendimento profundo e suporte contínuo
+                    </p>
+                </div>
+
+                <div class="informacao-modulo">
+                    <img src="assets/midia/icones/seminario-on-line.png" alt="Icone do card de equipamentos"
+                        class="img-card-modulo" />
+                    <span class="modulo-card">Aula ao vivo em grupo</span>
+                    <p class="txt-card">
+                        Sessões no Zoom com todos os alunos para demonstrar e ensinar técnicas de tatuagem, promovendo
+                        aprendizado coletivo e troca de experiências.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook ebook-animation">
+            <div class="ebook-conteudo">
+                <h2 class="titulo-ebook-top">E-book Gratuito: Dicas Exclusivas para Aspirantes a Tatuadores</h2>
+                <img src="assets/midia/ebook-desenho.png" class="img-ebook" alt="Imagem ebook de desenhos">
+                <div class="informacoes-ebook">
+                    <h2 class="titulo-ebook">E-book Gratuito: Dicas Exclusivas para Aspirantes a Tatuadores</h2>
+                    <p class="txt-ebook">Baixe nosso e-book gratuito e descubra dicas essenciais que vão transformar sua
+                        carreira de tatuador.</p>
+
+                    <div class="lista-ebook">
+                        <ul class="lista">
+                            <li class="item"><i class="fas fa-check"></i> Técnicas de sombreamento e linha</li>
+                            <li class="item"><i class="fas fa-check"></i> Cuidados com os equipamentos </li>
+                            <li class="item"><i class="fas fa-check"></i> Como atrair e fidelizar clientes </li>
+                            <li class="item"><i class="fas fa-check"></i> Dicas de marketing para tatuadores</li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="abrir-modal btn-desk btn-informacoes button">
+                        <span class="text">Entrar na fila de espera</span>
+                        <span class="shimmer"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="fundo-destaque">
+            <div class="oportunidade">
+                <h1 class="titulo-destaque">Não perca essa oportunidade!</h1>
+                <p class="txt-destaque">Baixe nosso e-book gratuito e descubra dicas essenciais que vão transformar sua
+                    carreira de tatuador.</p>
+                <button type="button" class="abrir-modal btn-desk btn-informacoes button">
+                    <span class="text">Entrar na fila de espera</span>
+                    <span class="shimmer"></span>
+                </button>
+            </div>
+        </section>
+
+        <section class="sobre-tuzinho">
+            <div class="conteudo-sobre">
+                <div class="informacao-sobre">
+                    <h3 class="titulo-main sobre-animation">sobre o seu mentor</h3>
+                    <p class="paragrafo-main sobre-animation">
+                        Eu sou Tuzinho Tattoo, com quase 30 anos de experiência no mundo
+                        das tatuagens. Meu trabalho já foi premiado em diversas
+                        convenções, o que me trouxe fama internacional. Há anos criei a
+                        Mentoria para tatuadores de todos os níveis realizarem seus sonhos
+                        de começar ou evoluir na tatuagem. Já formei centenas de
+                        profissionais e agora você tem a oportunidade de fazer parte dessa
+                        comunidade e se destacar no mercado.
+                    </p>
+
+                    <button type="button" class="abrir-modal btn-main btn-desk button sobre-animation">
+                        <span class="text">Entrar na lista de espera</span>
+                        <span class="shimmer"></span>
+                    </button>
+
+                    <button type="button" class="abrir-modal-mob btn-mobile btn-animation">Entrar na lista de
+                        espera</button>
+                </div>
+
+                <div class="midia-sobre">
+                    <h3 class="titulo-top">sobre o seu mentor</h3>
+                    <img src="assets/midia/sobre-tuzinho-tatuador.webp" alt="Tatuador e mentor Tuzinho"
+                        class="img-sobre-tuzinho" />
+                </div>
+            </div>
+        </section>
+
+        <section class="perguntas-frequentes perguntas-animation">
+            <div class="cabecalho-main">
+                <h2 class="titulo-main">perguntas frequentes</h2>
+                <p class="txt-main">
+                    Tudo que você precisa saber antes de entrar pro nosso time
+                </p>
+            </div>
+
+            <div class="accordion mt-3" id="accordionExample">
+
+                <div class="card">
+                    <div class="card-header card-acordeon" id="headingFour">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+                            aria-expanded="false" aria-controls="collapseFour">
+                            Como funciona o pagamento?
+                        </button>
+                        <span class="btn" type="button" data-toggle="collapse" data-target="#collapseFour"
+                            aria-expanded="true" aria-controls="collapseFour">
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </span>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            Você poderá pagar a Mentoria por Boleto financiado em até 36 vezes, Boleto a vista, PIX,
+                            Cartão de Crédito
+                            em até 12 vezes ou Débito
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header card-acordeon" id="headingFive">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
+                            aria-expanded="false" aria-controls="collapseFive">
+                            Como funciona o financiamento?
+                        </button>
+                        <span class="btn" type="button" data-toggle="collapse" data-target="#collapseFive"
+                            aria-expanded="true" aria-controls="collapseFive">
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </span>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            Sujeito à análise de crédito, parcelado em até 36 vezes com parcelas a partir de 250 reais e
+                            entrada a
+                            partir de 650 reais, que pode ser parcelada em até 3 vezes no cartão
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header card-acordeon" id="headingSix">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSix"
+                            aria-expanded="false" aria-controls="collapseSix">
+                            Tem certificados?
+                        </button>
+                        <span class="btn" type="button" data-toggle="collapse" data-target="#collapseSix"
+                            aria-expanded="true" aria-controls="collapseSix">
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </span>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                        <div class="card-body">
+                            O certificado de conclusão é entregue após a finalização do curso e conclusão de pelo menos
+                            70% das
+                            atividades aprovadas
+                            <div class="w-100 mb-3"></div>
+                            O certificado de participação será entregue caso o aluno tenha participado de pelo menos 70%
+                            das
+                            atividades, sendo estas aprovadas e executadas em pele humana
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header card-acordeon" id="headingSeven">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven"
+                            aria-expanded="false" aria-controls="collapseSeven">
+                            Por onde acessar o conteúdo?
+                        </button>
+                        <span class="btn" type="button" data-toggle="collapse" data-target="#collapseSeven"
+                            aria-expanded="true" aria-controls="collapseSeven">
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </span>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            Com seu login e senha da Tuzinho Academy, você terá acesso às lives, workshops e todo o
+                            conteúdo da
+                            mentoria
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header card-acordeon" id="headingEight">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseEight"
+                            aria-expanded="false" aria-controls="collapseEight">
+                            Posso cancelar?
+                        </button>
+                        <span class="btn" type="button" data-toggle="collapse" data-target="#collapseEight"
+                            aria-expanded="true" aria-controls="collapseEight">
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </span>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            Em até 7 dias após a compra, é possível solicitar o cancelamento e reembolso integra
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header card-acordeon" id="headingNine">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseNine"
+                            aria-expanded="false" aria-controls="collapseNine">
+                            Como funciona a mentoria?
+                        </button>
+                        <span class="btn" type="button" data-toggle="collapse" data-target="#collapseNine"
+                            aria-expanded="true" aria-controls="collapseNine">
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </span>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul>
+                                <li>Workshops para iniciantes e avançados</li>
+                                <li>Workshops didáticos e detalhados com passo a passo para levar o aluno do zero ao
+                                    avançado</li>
+                                <li>Exercícios passo a passo para fixação do aprendizado</li>
+                                <li>Suporte por WhatsApp para problemas simples e agilidade na transição entre passos e
+                                    exercícios</li>
+                                <li>Aulas ao vivo com o Tuzinho em salas do Zoom para execução de trabalhos juntos, do
+                                    início ao fim
+                                </li>
+                                <li>Sessão de perguntas e respostas em sala no Zoom com todos os alunos para esclarecer
+                                    dúvidas mais
+                                    complexas sobre os trabalhos da mentoria</li>
+                                <li>Aula particular com um aluno semanalmente, seguindo o cronograma para resolver os
+                                    problemas
+                                    individuais dele, transmitida ao vivo no YouTube</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="final"></div>
+
+        <a href="https://api.whatsapp.com/send?phone=5511967150168&text=Ol%C3%A1" class="btn-whats">
+            <div class="whatsapp-button">
+                <p>Suporte</p>
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </a>
+    </main>
+    <script src="assets/js/btn-whats.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+@media screen and (min-width: 1500px) {
+    .main .informacoes {
+        left: 100px;
+        margin-left: 120px;
+    }
+
+    .main .informacoes .sub-informacoes {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .main .informacoes {
+        top: 180px;
+    }
+    
+    .main .sobre-tuzinho .conteudo-sobre .midia-sobre .img-sobre-tuzinho {
+        width: 100%;
+        z-index: 555;
+    }
+
+    .main .informacoes .sub-informacoes {
+        width: 60%;
+    }
+
+    .main .conteudo .img-informacoes img {
+        width: 650px;
+        height: 550px;
+    }
+
+    .main .sobre-tuzinho {
+        height: 100%;
+        margin-top: 50px;
+    }
+    
+    .main .modulos .cards-modulos {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .main .informacoes .sub-informacoes {
+        font-size: 20px;
+    }
+
+    .main .informacoes .sub-informacoes {
+        width: 50%;
+    }
+
+    .main .informacoes .paragrafo-informacoes {
+        width: 300px;
+
+    }
+
+    .ebook .ebook-conteudo {
+        gap: 30px;
+        padding: 15px;
+    }
+
+    .ebook .ebook-conteudo .img-ebook {
+        height: 400px;
+        width: 320px;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre {
+        width: 800px;
+        margin-left: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre .paragrafo-main {
+        width: 100%;
+    }
+
+    .perguntas-frequentes .cabecalho-main .txt-main {
+        width: 90%;
+
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    /* modal */
+    .modal-conteudo {
+        width: 90%;
+        max-width: 390px;
+
+    }
+    /* modal */
+
+    /* btn whats */
+    .whatsapp-button {
+        width: 140px;
+        height: 50px;
+        font-size: 16px;
+        bottom: 35px;
+        gap: 15px;
+      }
+
+      .fa-whatsapp{
+        font-size: 30px;
+      }
+
+    /* btn whats */
+    
+    .main {
+        background-image: url(../midia/Mobile.png);
+        background-repeat: no-repeat;
+        background-position: top top;
+        background-size: cover;
+    }
+
+    .main .mentoria .conteudo {
+        flex-direction: column-reverse;
+        position: static;
+    }
+
+    .main .informacoes {
+        position: static;
+    }
+
+    .main .conteudo .img-informacoes img {
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+    }
+
+    .main .informacoes {
+        text-align: center;
+    }
+
+    .main .informacoes .sub-informacoes,
+    .main .informacoes .paragrafo-informacoes,
+    .main .informacoes .btn-informacoes,
+    .ebook .ebook-conteudo .informacoes-ebook .btn-informacoes,
+    .fundo-destaque .oportunidade .titulo-destaque,
+    .fundo-destaque .oportunidade .txt-destaque,
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre .titulo-main,
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre .btn-main{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .main .modulos .titulo-main,
+    .fundo-destaque .oportunidade .titulo-destaque {
+        font-size: 25px;
+    }
+
+    .main .informacoes .sub-informacoes,
+    .main .informacoes .paragrafo-informacoes{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .ebook {
+        height: 100%;
+    }
+
+    .ebook .ebook-conteudo {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+
+    .ebook .ebook-conteudo .informacoes-ebook,
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre{
+        width: 100%;
+        text-align: center;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre .paragrafo-main{
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+
+    .ebook .ebook-conteudo .informacoes-ebook .titulo-ebook {
+       display: none;
+    }
+
+    .ebook .ebook-conteudo .titulo-ebook-top {
+        font-family: "Nexa", sans-serif;
+        font-size: 35px;
+        color: #ffff;
+        margin-bottom: 15px;
+        text-align: center;
+        display: block;
+    }
+
+    .ebook .ebook-conteudo .informacoes-ebook .lista-ebook {
+        text-align: start;
+    }
+
+    .fundo-destaque .oportunidade .titulo-destaque{
+        max-width: 300px;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre {
+        flex-direction: column-reverse;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre .informacao-sobre .titulo-main {
+       display: none !important; 
+    }
+
+    .accordion {
+        width: 100%;
+    }
+
+    .main .sobre-tuzinho .conteudo-sobre .midia-sobre .titulo-top {
+        display: block;
+        color: white;
+        text-transform: uppercase;
+        font-size: 35px;
+        width: 90%;
+        text-align: center;
+        margin: 0 auto 15px auto;
+        font-family: var(--font-titulo);
+    }
+
+    .perguntas-frequentes .cabecalho-main .titulo-main{
+        font-size: 35px;
+    }
+
+
+}
+
+@media screen and (max-width:400px) {
+    .perguntas-frequentes .cabecalho-main .titulo-main,
+    .main .sobre-tuzinho .conteudo-sobre .midia-sobre .titulo-top {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,671 @@
+@font-face {
+    font-family: "Horizon";
+    src: url("../font/font-horizon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nexa";
+    src: url("../font/Nexa-Heavy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Relaway";
+    src: url("../font/font-relaway.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+  }
+
+body {
+    background-color: #121226;
+    width: 100%;
+    font-family: var(--font-padrao);
+}
+
+.final {
+    height: 80px;
+}
+
+/* Inicio botao whats */
+
+.whatsapp-button {
+    position: fixed;
+    width: 200px;
+    height: 60px;
+    bottom: 110px;
+    right: 40px;
+    background-color: #50cb5d;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 2px 2px 3px #fff;
+    z-index: 9999;
+    animation: float 3s ease-in-out ;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .btn-whats{
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .whatsapp-button p{
+    margin: 0;
+  }
+  
+  .fa-whatsapp{
+    font-size: 45px;
+  }
+  
+  .whatsapp-button:hover{
+    background-color: #fff;
+    color: #50cb5d;
+    box-shadow: 2px 2px 3px #50cb5d;
+    transform: scale(0.90);
+  }
+
+  /* final botao whats */
+
+
+/* COMEÇO MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main .modal .modal-conteudo h2 {
+    color: white;
+    font-family: var(--font-padrao);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.modal-conteudo {
+    background: linear-gradient(#121226, #121226) padding-box,
+        linear-gradient(to right, #5358e6, #a6177e) border-box;
+    border-radius: 50em;
+    border: 3px solid transparent;
+    background-position: center;
+    margin: 5% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #121226;
+}
+
+.modal-conteudo .formulario-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.modal-conteudo .formulario-modal .label-form {
+    font-size: 14px;
+    color: #ffff;
+}
+
+.modal-conteudo .formulario-modal .grupo-formulario .input-form {
+    background-color: #121226;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #404457;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+}
+
+.modal-conteudo .formulario-modal .checkbox {
+    border-radius: 50%;
+}
+
+.modal-conteudo .formulario-modal .btn-form:focus {
+    border: 0;
+}
+
+.btn-form {
+    background: #121226;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, #a6177e, #5358e6) 1;
+    padding: 10px 8px;
+    color: #fff;
+    transition: background 0.2s ease-in-out, border-image 0.3s ease-in-out;
+
+}
+
+.btn-form:hover {
+    background: #5358e6;
+    border-image: linear-gradient(to right, #5358e6, #a6177e) 1;
+
+}
+
+.checkbox-group {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.input-radio {
+    display: none;
+
+}
+
+.input-radio+label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    user-select: none;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.input-radio+label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background: #121226;
+
+}
+
+.input-radio:checked+label:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #5358e6;
+}
+
+
+.btn-fechar {
+    float: right;
+    color: #5358e6;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-fechar:hover,
+.btn-fechar:focus {
+    color: #a6177e;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.secao {
+    height: 100vh;
+    padding: 20px;
+    background-color: black;
+}
+/* FIM MODAL */
+
+/* COMEÇO MAIN */
+.main {
+    background-image: url(../midia/Desktop.png);
+    background-repeat: no-repeat;
+    background-position: top top;
+    background-size: cover;
+}
+
+/* FIM MAIN */
+
+/* COMEÇO MENTORIA */
+
+.main .mentoria .conteudo {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.main .informacoes {
+    top: 250px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.main .informacoes .sub-informacoes {
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--font-titulo);
+    margin: 0;
+    width: 800px;
+    font-size: 30px;
+}
+
+.main .informacoes .paragrafo-informacoes {
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+    width: 540px;
+    font-family: var(--font-padrao)
+}
+
+.main .informacoes .btn-informacoes {
+    background: linear-gradient(#121226, #121226) padding-box,
+        linear-gradient(to right, #5358e6, #a6177e) border-box;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    position: relative;
+    width: 340px;
+    margin-top: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    white-space: nowrap;
+    letter-spacing: normal;
+    color: #ffff;
+}
+
+.main .informacoes .btn-mobile {
+    display: none;
+}
+
+.main .informacoes .btn-informacoes:hover {
+    animation: border-animation 2s infinite;
+}
+
+.main .conteudo .img-informacoes img {
+    width: 100%;
+    height: 90%;
+    margin-top: 70px;
+    mix-blend-mode: lighten;
+}
+
+/* FIM MENTORIA */
+
+
+/* COMEÇO MÓDULOS */
+
+.main .modulos {
+    height: 100%;
+}
+
+.main .modulos .titulo-main {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    margin: 45px 0 30px;
+    font-family: var(--font-titulo);
+}
+
+.main .modulos .cards-modulos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main .modulos .cards-modulos .informacao-modulo,
+.main .modulos .cards-modulos .informacao-modulo-topicos {
+    background: linear-gradient(#35356b, #35356b) padding-box,
+        linear-gradient(to right, #5358e6, #a6177e) border-box;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    height: 260px;
+    width: 310px;
+    margin: 15px;
+    gap: 5px;
+}
+
+.main .modulos .cards-modulos .informacao-modulo-topicos .lista-card .item-cards-modulos {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 3px;
+    color: #d1d1d1;
+    width: 280px;
+    font-size: 14px;
+}
+
+.main .modulos .cards-modulos .img-card-modulo {
+    width: 30px;
+    height: 30px;
+    margin: 20px 0 10px 0;
+}
+
+.main .modulos .cards-modulos .modulo-card {
+    color: white;
+    font-size: 14px;
+}
+
+.main .modulos .cards-modulos .txt-card {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #d1d1d1;
+    width: 280px;
+    height: 100px;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+/* FIM MÓDULOS */
+
+/* COMEÇO EBOOK */
+
+.ebook {
+    height: 550px;
+}
+
+.ebook .ebook-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin-top: 150px;
+    height: 100%;
+    gap: 50px;
+}
+
+.ebook .ebook-conteudo .img-ebook {
+    height: 550px;
+    width: 450px;
+}
+
+.ebook .ebook-conteudo .informacoes-ebook {
+    margin-top: 30px;
+    width: 480px;
+}
+
+.ebook .ebook-conteudo .titulo-ebook-top {
+    display: none;
+}
+
+.ebook .ebook-conteudo .informacoes-ebook .titulo-ebook {
+    font-family: "Nexa", sans-serif;
+    font-size: 25px;
+    color: #ffff;
+    margin-bottom: 15px;
+}
+
+.ebook .ebook-conteudo .informacoes-ebook .txt-ebook {
+    font-family: var(--font-padrao);
+    color: #ffff;
+    font-size: 16px;
+}
+
+.ebook .ebook-conteudo .informacoes-ebook .lista-ebook {
+    margin: 30px 0px;
+}
+
+.ebook .ebook-conteudo .informacoes-ebook .lista-ebook .lista {
+    line-height: 25px;
+    color: #ffff;
+}
+
+
+.ebook .ebook-conteudo .informacoes-ebook .lista-ebook .lista .item i {
+    color: #a6177e;
+    margin-inline-end: 5px;
+    font-weight: 700;
+}
+
+.ebook .ebook-conteudo .informacoes-ebook .btn-informacoes {
+    background: linear-gradient(#121226, #121226) padding-box,
+        linear-gradient(to right, #5358e6, #a6177e) border-box;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    position: relative;
+    width: 340px;
+    margin-top: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    white-space: nowrap;
+    letter-spacing: normal;
+    color: #ffff;
+}
+
+/* FIM EBOOK */
+
+
+/* COMEÇO FUNDO DESTAQUE */
+.fundo-destaque {
+    margin-top: 30px;
+    height: 300px;
+    background: linear-gradient(to right, #a6177e, #31348d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.fundo-destaque .oportunidade {
+    height: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundo-destaque .oportunidade .titulo-destaque {
+    font-size: 40px;
+    font-family: var(--font-titulo);
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.fundo-destaque .oportunidade .txt-destaque {
+    width: 500px;
+    font-family: var(--font-padrao);
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.fundo-destaque .oportunidade .btn-informacoes{
+    background: linear-gradient(#121226, #121226) padding-box,
+    linear-gradient(to right, #5358e6, #a6177e) border-box;
+border-radius: 10px;
+border: 3px solid transparent;
+position: relative;
+width: 340px;
+margin-top: 20px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+text-decoration: none;
+padding: 0.5em 1em;
+cursor: pointer;
+white-space: nowrap;
+letter-spacing: normal;
+color: #ffff;
+}
+
+
+/* FIM FUNDO DESTAQUE */
+
+
+/* COMEÇO SOBRE */
+.main .sobre-tuzinho {
+    height: 100vh;
+    position: relative;
+}
+
+.main .sobre-tuzinho .conteudo-sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .sobre-tuzinho .conteudo-sobre .informacao-sobre {
+    width: 800px;
+    margin-left: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+}
+
+.main .sobre-tuzinho .conteudo-sobre .informacao-sobre .titulo-main {
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: var(--font-titulo);
+    margin-bottom: 15px;
+}
+
+.main .sobre-tuzinho .conteudo-sobre .informacao-sobre .paragrafo-main {
+    width: 85%;
+    color: white;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.main .sobre-tuzinho .conteudo-sobre .informacao-sobre .btn-main {
+    background: linear-gradient(#121226, #121226) padding-box,
+        linear-gradient(to right, #5358e6, #a6177e) border-box;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    position: relative;
+    width: 300px;
+    margin-top: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    color: white;
+}
+
+.main .sobre-tuzinho .conteudo-sobre .informacao-sobre .btn-mobile {
+    display: none;
+}
+
+.main .sobre-tuzinho .conteudo-sobre .midia-sobre .titulo-top {
+    display: none;
+}
+
+.main .sobre-tuzinho .conteudo-sobre .midia-sobre .img-sobre-tuzinho {
+    mix-blend-mode: lighten;
+}
+
+/* FIM SOBRE */
+
+/* COMEÇO PERGUNTAS FREQUENTES */
+
+.perguntas-frequentes .cabecalho-main {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.perguntas-frequentes .cabecalho-main .titulo-main {
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: var(--font-titulo);
+}
+
+.perguntas-frequentes .cabecalho-main .txt-main {
+    color: #b4b4b4;
+    font-size: 19px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.accordion {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #121226;
+}
+
+.card-header {
+    padding: .75rem 0;
+}
+
+.card-acordeon {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+}
+
+.btn {
+    color: white;
+    background: transparent;
+}
+
+.btn:hover {
+    color: #7F56D9;
+}
+
+.fa-chevron-circle-down {
+    color: #7F56D9;
+}
+
+.card-body {
+    color: #B4C3DF;
+    font-family: 'Axiforma', sans-serif;
+}
+
+.card-body li {
+    list-style: circle;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-family: 'Axiforma', sans-serif;
+}
+
+/* FIM PERGUNTAS FREQUENTES */
